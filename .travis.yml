@@ -7,7 +7,7 @@ before_install:
 
 script: #Tutti i comandi da avviare per il test, travis assume che il test esca in automatico
   #-- --coverage -> fa uscire docker dopo il test
-  - docker run -e CI=true stephengrider/docker-react npm run test
+  - docker run -e CI=true fmalizia/docker-react npm run test
 
 
 #deploy:
