@@ -23,8 +23,7 @@ deploy:
   on:
     branch: master #FAi il deploy solo quando viene fatto un deploy sul branch master
   access_key_id: $AWS_ACCSS_KEY
-  secret_access_key:
-    secure: "$AWS_SECRET_KEY"
+  secret_access_key: $AWS_SECRET_KEY
 
 
 
