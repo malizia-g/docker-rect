@@ -22,12 +22,11 @@ deploy:
 
   on:
     branch: master #FAi il deploy solo quando viene fatto un deploy sul branch master
+  
+  #Non memorizzo qui le chiavi di accesso ma le metto tra le configurazioni di travis-ci
   access_key_id: $AWS_ACCSS_KEY
   secret_access_key: $AWS_SECRET_KEY
 
 
 
 #Non memorizzo qui le chiavi di accesso ma le metto tra le configurazioni di travis-ci
-#AKIA2WDP4VM2TW6M5IUT
-
-  #tfd2Lm/mLkLsmwDuy+zCKVm8XvLoxf8REDXIBwrP
