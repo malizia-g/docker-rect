@@ -1,6 +1,6 @@
 sudo: required #Super user permissions
 service:
-  -docker #Installa docker
+  - docker #Installa docker
 
 before_install: 
   - docker build -t fmalizia/docker-react -f Dockerfile.dev . #Taggo l'immagine secondo convenzione
