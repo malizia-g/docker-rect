@@ -1,0 +1,27 @@
+version: '3'
+services:
+  web:
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    #build: . #Non fuinziona perchè non uso un Dockerfile di default
+    build:
+      context: . #In quale cartella si trovano i file del progetto (. è la stessa cartella del dockerfile)
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3000:3000
+    volumes:
+      - /app/node_modules  #Usa la cartella appmodules dentro il container
+      - .:/app        #Mappa la cartella locale con la cartella /app nel container
+  test:   #Container speifico per il test
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+    #build: . #Non fuinziona perchè non uso un Dockerfile di default
+    build:
+      context: . #In quale cartella si trovano i file del progetto (. è la stessa cartella del dockerfile)
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules  #Usa la cartella appmodules dentro il container
+      - .:/app        #Mappa la cartella locale con la cartella /app nel container
+    command: ["npm", "run", "test"]  #Sovrascrive il comando nel dockerfile
