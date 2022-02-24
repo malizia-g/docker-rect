@@ -10,7 +10,7 @@ RUN npm run build
 
 FROM nginx
 
-#In locale non fa nulla ... serve solo per AWS
+#In locale non fa nulla ... serve solo per esporre la porta in AWS
 EXPOSE 80 
 
 #Copia dalla fase builder la cartella build, nella cartella da cui ngx recupererà i file
