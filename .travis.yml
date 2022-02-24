@@ -7,4 +7,26 @@ before_install:
 
 script: #Tutti i comandi da avviare per il test, travis assume che il test esca in automatico
   #-- --coverage -> fa uscire docker dopo il test
-  - docker run fmalizia/docker-react npm run test -- --coverage
+  - docker run -e CI=true stephengrider/docker-react npm run test
+
+
+#deploy:
+ # provider: elasticbeanstalk #Preconfigurato in automatico in travis-ci
+   #Recupero la regione da AWS
+   #Docker-env.eba-7xppbe2z.us-east-1.elasticbeanstalk.com 
+  #region: "us-east-1"
+  #app: "docker"
+  #env: "Docker-env"
+  #bucket_name: "elasticbeanstalk-us-east-1-734674070325"
+  #bucket_path: "docker" #stesso nome dell'applicazione per default
+
+  #on:
+   # branch: master #FAi il deploy solo quando viene fatto un deploy sul branch master
+
+  
+
+
+#Non memorizzo qui le chiavi di accesso ma le metto tra le configurazioni di travis-ci
+#AKIA2WDP4VM2TW6M5IUT
+
+  #tfd2Lm/mLkLsmwDuy+zCKVm8XvLoxf8REDXIBwrP
