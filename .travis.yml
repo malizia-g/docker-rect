@@ -1,0 +1,10 @@
+sudo: required #Super user permissions
+service:
+  -docker #Installa docker
+
+before_install: 
+  - docker build -t fmalizia/docker-react -f Dockerfile.dev . #Taggo l'immagine secondo convenzione
+
+script: #Tutti i comandi da avviare per il test, travis assume che il test esca in automatico
+  #-- --coverage -> fa uscire docker dopo il test
+  - docker run fmalizia/docker-react npm run test -- --coverage
